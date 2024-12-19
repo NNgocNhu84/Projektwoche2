@@ -14,7 +14,7 @@ class QuizActivity : AppCompatActivity() {
     private val questions = listOf(
         Question("What is the capital of France?", listOf("Paris", "London", "Rome", "Berlin"), 0),
         Question("What planet is known as the 'Red Planet'?", listOf("Earth", "Venus", "Mars", "Jupiter"), 2),
-        Question("What is 5 + 3?", listOf("6", "7", "8", "9"), 2),
+        Question("What is 5 + 1?", listOf("6", "7", "8", "9"), 0),
         Question("Which ocean is the largest in the world?", listOf("Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"), 1),
         Question("What is the fastest land animal?", listOf("Lion", "Tiger", "Cheetah", "Horse"), 2),
         Question("Which fruit is known for having seeds on the outside?", listOf("Apple", "Banana", "Strawberry", "Watermelon"), 2),
