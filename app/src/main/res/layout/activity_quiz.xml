@@ -20,68 +20,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/answerButton6"
-        android:layout_width="183dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="180dp"
-        android:backgroundTint="#FAADC7"
-        android:text="d) Berlin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/imageFilterView3"
-        android:layout_width="171dp"
-        android:layout_height="85dp"
-        app:layout_constraintBottom_toTopOf="@+id/questionTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"
-        app:srcCompat="@drawable/img_2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="What is the capital of France?"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/answerButton1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/answerButton1"
-        android:layout_width="183dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="#FAADC7"
-        android:text="a) Paris"
-        app:layout_constraintBottom_toTopOf="@+id/answerButton4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/answerButton4"
-        android:layout_width="183dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="#FAADC7"
-        android:text="b) Rome"
-        app:layout_constraintBottom_toTopOf="@+id/answerButton5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:padding="16dp"
         android:text="LET'S QUIZ"
         android:textColor="#FAADC7"
@@ -92,15 +35,90 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/answerButton1"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#FAADC7"
+        android:text="a) Paris"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/answerButton6"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="172dp"
+        android:backgroundTint="#FAADC7"
+        android:text="d) Berlin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/answerButton5"
         android:layout_width="183dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#FAADC7"
         android:text="c) London"
         app:layout_constraintBottom_toTopOf="@+id/answerButton6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/answerButton4"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#FAADC7"
+        android:text="b) Rome"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="What is the capital of France?"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageFilterView3"
+        android:layout_width="171dp"
+        android:layout_height="85dp"
+        app:layout_constraintBottom_toTopOf="@+id/questionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156"
+        app:srcCompat="@drawable/img_2" />
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Score: 0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/questionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
