@@ -29,6 +29,9 @@
             android:exported="true">
         </activity>
 
+        <activity android:name=".ResultActivity" />
+
+
     </application>
 
 </manifest>
