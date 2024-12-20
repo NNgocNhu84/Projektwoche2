@@ -1,5 +1,7 @@
 package com.ngocnhungo.quiz
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,7 +11,7 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var resultTextView: TextView
     private lateinit var questionTextView: TextView
-
+    private lateinit var scoreTextView: TextView
 
     private val questions = listOf(
         Question("What is the capital of France?", listOf("Paris", "London", "Rome", "Berlin"), 0),
@@ -25,13 +27,18 @@ class QuizActivity : AppCompatActivity() {
     )
 
     private var currentQuestionIndex = 0
+    private var score = 0
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
         resultTextView = findViewById(R.id.resultTextView)
         questionTextView = findViewById(R.id.textView2)
+        scoreTextView = findViewById(R.id.scoreTextView)
+        updateScore()
+
         displayQuestion()
 
         val answerButton1: Button = findViewById(R.id.answerButton1)
@@ -39,19 +46,19 @@ class QuizActivity : AppCompatActivity() {
         val answerButton5: Button = findViewById(R.id.answerButton5)
         val answerButton6: Button = findViewById(R.id.answerButton6)
 
-        // Đặt sự kiện cho các nút trả lời
+
         answerButton1.setOnClickListener { checkAnswer(0) }
         answerButton4.setOnClickListener { checkAnswer(1) }
         answerButton5.setOnClickListener { checkAnswer(2) }
         answerButton6.setOnClickListener { checkAnswer(3) }
     }
 
-    // Hiển thị câu hỏi hiện tại
+
     private fun displayQuestion() {
         val currentQuestion = questions[currentQuestionIndex]
         questionTextView.text = currentQuestion.text
 
-        // Cập nhật các câu trả lời
+
         val buttons = listOf<Button>(
             findViewById(R.id.answerButton1),
             findViewById(R.id.answerButton4),
@@ -64,30 +71,36 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
-
     private fun checkAnswer(answerIndex: Int) {
         val currentQuestion = questions[currentQuestionIndex]
 
         if (answerIndex == currentQuestion.correctAnswerIndex) {
-
+            score += 10
+            scoreTextView.text = "Score: $score"
             resultTextView.text = "You answered correctly! The next question..."
             resultTextView.setTextColor(resources.getColor(android.R.color.holo_green_light))
-
-
-            if (currentQuestionIndex < questions.size - 1) {
-                currentQuestionIndex++
-                displayQuestion()
-            } else {
-                resultTextView.text = "Congratulations! You have completed the test!"
-            }
-
         } else {
-
             resultTextView.text = "You answered incorrectly. Try again!"
             resultTextView.setTextColor(resources.getColor(android.R.color.holo_red_light))
         }
+
+        if (currentQuestionIndex < questions.size - 1) {
+            currentQuestionIndex++
+            displayQuestion()
+        } else {
+
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("SCORE", score)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+
+
+    private fun updateScore() {
+        scoreTextView.text = "Score: $score"
     }
 }
-
 
 data class Question(val text: String, val answers: List<String>, val correctAnswerIndex: Int)
